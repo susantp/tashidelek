@@ -39,11 +39,11 @@ class HomeController extends Controller
 
     public function gallery()
     {
-        return "gallery";
+        return "coming soon!";
     }
 
     public function contact()
     {
-        return "contact";
+        return "coming soon!";
     }
 }
