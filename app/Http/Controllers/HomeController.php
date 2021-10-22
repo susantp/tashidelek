@@ -41,7 +41,7 @@ class HomeController extends Controller
 
     public function contact()
     {
-        return "coming soon!";
+        return view('contact');
     }
 
     public function reservation()

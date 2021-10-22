@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Excel;
 
@@ -17,5 +18,9 @@ Route::get('/import', function (Excel $excel) {
     $excel->import(new \App\Imports\DataImport('Items'), $filePath);
     return 'yes';
 });
-
+Route::get('mail', function () {
+    Mail::raw('Text to e-mail', function ($message) {
+        $message->to('gracysusant@gmail.com');
+    });
+});
 Auth::routes();
