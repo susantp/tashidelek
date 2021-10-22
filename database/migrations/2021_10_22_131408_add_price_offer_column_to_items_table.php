@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddOfferColumnToItemsTable extends Migration
+class AddPriceOfferColumnToItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddOfferColumnToItemsTable extends Migration
     public function up()
     {
         Schema::table('items', function (Blueprint $table) {
-            $table->string('offer')->nullable()->default(null)->after('description');
+            $table->string('price_offer')->nullable()->default(null)->after('description');
         });
     }
 

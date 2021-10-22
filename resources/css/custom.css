@@ -8,34 +8,39 @@
     border-top: 1px dashed;
 }
 
+.menu-item{
+    overflow: fragments;
+}
+
 .menu-classic-single .list-menu > li {
-    padding: 22px 20px 22px 20px;
+    padding: 32px 20px 32px 20px;
     background-color: rgb(241, 97, 33, 0.7);
-    margin-bottom: 5px;
+    margin-bottom: 3rem;
     contain: content;
+    border-radius: 20px;
 }
 
 .menu-item-desc {
     max-width: 70%;
+    font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
 }
 
 .menu-item .name {
     font-size: 3rem;
-    font-family: "Agency FB", serif;
+    overflow: fragments;
+    font-family: "Poppins", serif;
 
 }
 
 .menu-item .price {
     border-radius: 5.5em;
-    /*outline: 1px solid #ffffff;*/
-    padding: 1em;
     font-size: 4.5rem;
 }
 
 .menu-item-offer {
     padding: 5px;
     font-size: 3rem;
-
     text-align: right;
 }
 

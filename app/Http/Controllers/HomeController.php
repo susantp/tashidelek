@@ -35,6 +35,7 @@ class HomeController extends Controller
     {
         if ($slug == null) return redirect('/');
         $menu = Menu::with('items')->firstWhere('slug', $slug);
+//        return $menu->items   ;
         if ($menu == null) return redirect('/');
         return \view('menu-single', compact('menu'));
     }

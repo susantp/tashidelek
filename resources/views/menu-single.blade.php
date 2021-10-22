@@ -27,11 +27,13 @@
                         <ul class="list-menu">
                             @foreach($menu->items as $item)
                                 <li>
-                                    <div class="menu-item h6"><span class="name">{{ucfirst($item->name)}}</span> <span
-                                            class="price">{{$item->price}}</span></div>
+                                    <div class="menu-item h6">
+                                        <p class="name">{{ucfirst($item->name)}}</p>
+                                        <p class="price">{{$item->price}}</p>
+                                    </div>
                                     <div class="menu-item-desc"><span>{{strtolower($item->description)}}</span></div>
-                                    @if($item->offer)
-                                        <div class="menu-item-offer"><span>{{$item->offer}}</span></div>
+                                    @if($item->price_offer)
+                                        <div class="menu-item-offer"><span>{{$item->price_offer}}</span></div>
                                     @endif
                                 </li>
                             @endforeach
