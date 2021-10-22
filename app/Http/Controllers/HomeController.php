@@ -43,4 +43,9 @@ class HomeController extends Controller
     {
         return "coming soon!";
     }
+
+    public function reservation()
+    {
+        return view('reservation');
+    }
 }

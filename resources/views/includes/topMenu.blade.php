@@ -80,7 +80,8 @@
                             <ul class="rd-navbar-dropdown menu-img-wrap">
                                 @foreach($menus->sortBy('row_order') as $menu)
                                     @if($menu->items_count)
-                                        <li class="menu-img"><a href='{{url("menu/$menu->slug")}}'>
+                                        <li class="menu-img">
+                                            <a href='{{url("menu/$menu->slug")}}'>
                                                 @if($menu->thumbnail)
                                                     <img src="{{asset("storage/menuImages/$menu->thumbnail")}}"
                                                          alt=""
@@ -98,9 +99,10 @@
                             </ul>
                         </li>
 
-                        <li><a href="{{url('gallery')}}">Gallery</a></li>
-                        <li><a href="{{url('contact')}}">Contacts</a>
+                        {{--                        <li><a href="{{url('gallery')}}">Gallery</a></li>--}}
+                        <li><a href="{{route('contact')}}">Contacts</a>
                         </li>
+                        <li><a href="{{route('reservation')}}">Request Reservation</a></li>
 
                     </ul>
                     <div class="rd-navbar-aside-right">

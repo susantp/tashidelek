@@ -17,6 +17,7 @@
         "bootstrap": "^4.6.0",
         "jquery": "^3.6",
         "lodash": "^4.17.21",
+        "path": "^0.12.7",
         "popper.js": "^1.16.1",
         "postcss": "^8.3.11",
         "resolve-url-loader": "^4.0.0",
@@ -25,12 +26,11 @@
         "vue3-autocomplete": "^1.0.4",
         "vue3-cookies": "^1.0.1",
         "vue3-select2-component": "^0.1.7",
-        "vuex": "^4.0.2",
-        "path": "^0.12.7"
+        "vuex": "^4.0.2"
     },
     "devDependencies": {
-        "cross-env": "^7.0.3",
         "@vue/compiler-sfc": "^3.2.20",
+        "cross-env": "^7.0.3",
         "file-loader": "^6.2.0",
         "laravel-mix": "^6.0.34",
         "vue": "^3.2.6",
