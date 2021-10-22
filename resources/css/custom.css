@@ -20,7 +20,9 @@
 }
 
 .menu-item .name {
-    font-size: 2rem;
+    font-size: 3rem;
+    font-family: "Agency FB";
+
 }
 
 .menu-item .price {
@@ -28,7 +30,6 @@
     /*outline: 1px solid #ffffff;*/
     padding: 1em;
     font-size: 4.5rem;
-    font-weight: bolder;
 }
 
 
