@@ -3,7 +3,7 @@
 use App\Http\Controllers\HomeController;
 use \Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/{fbclid?}', [HomeController::class, 'index']);
 Route::get('about', [HomeController::class, 'about']);
 Route::get('menu/{slug?}', [HomeController::class, 'menu']);
 Route::get('gallery', [HomeController::class, 'gallery']);

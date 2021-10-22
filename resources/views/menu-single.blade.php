@@ -1,7 +1,8 @@
 @extends('layouts.layout')
 @section('pageTitle', 'Menu List')
 @section('content')
-    <section class="text-center section-34 section-sm-60 section-md-top-100 section-md-bottom-105 bg-image" style="background-color:#433E3D">
+    <section class="text-center section-34 section-sm-60 section-md-top-100 section-md-bottom-105 bg-image"
+             style="background-color:#433E3D">
         <div class="shell shell-fluid">
             <div class="range range-condensed">
                 <div class="cell-xs-12 cell-xl-preffix-1 cell-xl-11">
@@ -22,21 +23,25 @@
                 <div class="cell-xs-12">
                     <div class="inset-lg-left-15 inset-lg-right-15"></div>
                     <div class="menu-classic menu-classic-single" style="background-color: #433E3D">
-{{--                        <h4 class="title"><a href="menu-single.html" class="link-white">sdfadsf</a></h4>--}}
+                        {{--                        <h4 class="title"><a href="menu-single.html" class="link-white">sdfadsf</a></h4>--}}
                         <ul class="list-menu">
                             @foreach($menu->items as $item)
-                            <li>
-                                <div class="menu-item h6"><span class="name">{{ucfirst($item->name)}}</span> <span class="price">{{$item->price}}</span></div>
-                                <div class="menu-item-desc"><span>{{strtolower($item->description)}}</span></div>
-                            </li>
+                                <li>
+                                    <div class="menu-item h6"><span class="name">{{ucfirst($item->name)}}</span> <span
+                                            class="price">{{$item->price}}</span></div>
+                                    <div class="menu-item-desc"><span>{{strtolower($item->description)}}</span></div>
+                                    @if($item->offer)
+                                        <div class="menu-item-offer"><span>{{$item->offer}}</span></div>
+                                    @endif
+                                </li>
                             @endforeach
                         </ul>
                     </div>
                 </div>
             </div>
-{{--            <div class="offset-top-50 offset-sm-top-100 text-center divider-custom">--}}
-{{--                <div><a href="#" class="btn btn-md btn-shape-circle btn-primary">download full menu</a></div>--}}
-{{--            </div>--}}
+            {{--            <div class="offset-top-50 offset-sm-top-100 text-center divider-custom">--}}
+            {{--                <div><a href="#" class="btn btn-md btn-shape-circle btn-primary">download full menu</a></div>--}}
+            {{--            </div>--}}
         </div>
     </section>
     <section class="bg-image-10 context-dark" style="opacity: 0.6; background-color: #000000">

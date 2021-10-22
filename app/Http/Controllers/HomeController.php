@@ -8,11 +8,16 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
     public function index(): View
     {
+        if (request()->has('fbclid')) {
+            $fbclid = request()->get('fbclid');
+            Log::info("facebook clid " . $fbclid);
+        }
         return view('home');
     }
 

@@ -10,7 +10,7 @@
 
 .menu-classic-single .list-menu > li {
     padding: 22px 20px 22px 20px;
-    background-color: rgb(241,97,33,0.7);
+    background-color: rgb(241, 97, 33, 0.7);
     margin-bottom: 5px;
     contain: content;
 }
@@ -21,7 +21,7 @@
 
 .menu-item .name {
     font-size: 3rem;
-    font-family: "Agency FB";
+    font-family: "Agency FB", serif;
 
 }
 
@@ -30,6 +30,18 @@
     /*outline: 1px solid #ffffff;*/
     padding: 1em;
     font-size: 4.5rem;
+}
+
+.menu-item-offer {
+    padding: 5px;
+    font-size: 3rem;
+
+    text-align: right;
+}
+
+.menu-item-offer > span {
+    stroke: white;
+    stroke-width: 10px;
 }
 
 
