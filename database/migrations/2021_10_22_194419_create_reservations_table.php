@@ -21,6 +21,7 @@ class CreateReservationsTable extends Migration
             $table->integer('phone');
             $table->unsignedInteger('guest_count');
             $table->dateTimeTz('date_time');
+            $table->string('type');
             $table->json('meta')->nullable();
             $table->timestamps();
             $table->softDeletes();

@@ -8,8 +8,10 @@ export default function useReservations() {
             .then(({data}) => {
                 console.log(data)
             })
-            .catch((errors) => {
-                console.log(errors.response)
+            .catch(({response}) => {
+                if(response.status === 422){
+                    window.alert('Please fill the required fields')
+                }
             })
     }
 

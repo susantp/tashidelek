@@ -12,6 +12,7 @@ class Reservation extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $guarded = [];
     protected $casts = [
         'meta' => 'array'
     ];

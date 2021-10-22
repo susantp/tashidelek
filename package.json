@@ -23,7 +23,8 @@
         "resolve-url-loader": "^4.0.0",
         "sass": "^1.43.2",
         "sass-loader": "^12.2.0",
-        "vue3-autocomplete": "^1.0.4",
+        "vee-validate": "^4.5.4",
+        "vue3-autocomplete": "^0.1.0",
         "vue3-cookies": "^1.0.1",
         "vue3-select2-component": "^0.1.7",
         "vuex": "^4.0.2"

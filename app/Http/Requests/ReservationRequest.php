@@ -24,12 +24,14 @@ class ReservationRequest extends FormRequest
     public function rules()
     {
         return [
-            'full_name' => ['required', 'string'],
-            'email' => ['required', 'string'],
+            'first_name' => ['required', 'string'],
+            'last_name' => ['required', 'string'],
+            'email' => ['required', 'email'],
             'phone' => ['required', 'integer'],
             'guest_count' => ['required', 'integer'],
             'date_time' => ['required', 'date'],
-            'meta' => ['nullable', 'array']
+            'meta' => ['nullable', 'array'],
+            'type' => ['required', 'string']
         ];
     }
 }
