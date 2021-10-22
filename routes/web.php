@@ -1,18 +1,20 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use \Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Excel;
 
-Route::get('/{fbclid?}', [HomeController::class, 'index']);
-Route::get('about', [HomeController::class, 'about']);
-Route::get('menu/{slug?}', [HomeController::class, 'menu']);
-Route::get('gallery', [HomeController::class, 'gallery']);
-Route::get('contact', [HomeController::class, 'contact']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/menu/{slug?}', [HomeController::class, 'menu']);
+Route::get('/gallery', [HomeController::class, 'gallery']);
+Route::get('/contact', [HomeController::class, 'contact']);
 
-/*Route::get('excel', function () {
-    return \Maatwebsite\Excel\Facades\Excel::import(new \App\Imports\ItemImport, public_path('menus/beverages-beer.csv'));
-});*/
+Route::get('/import', function (Excel $excel) {
+    $filePath = public_path('data.xlsx');
+//    return $filePath;
+    $excel->import(new \App\Imports\DataImport('Items'), $filePath);
+    return 'yes';
+});
 
 Auth::routes();
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

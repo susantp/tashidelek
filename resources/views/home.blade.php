@@ -149,22 +149,24 @@
                 @foreach($menus->sortBy('row_order') as $menu)
                     @php $class=null; if($loop->iteration == 3) $class = "offset-top-50 offset-md-top-0" ; @endphp
                     @php if($loop->iteration > 3) $class = "offset-top-50 " ; @endphp
-                    <div class="cell-sm-6 cell-md-4 {{$class}}">
-                        <div class="menu-variant-1">
-                            @if($menu->thumbnail)
-                                <img src="{{$menu->thumbnail_url}}" alt="" style="width: 310px; height: 210px"
-                                     class="img-responsive reveal-inline-block"/>
-                            @else
-                                <img src="https://ui-avatars.com/api/?background=EFA802&color=fff&name={{$menu->slug}}" alt="" style="width:250px; height: 210px"
-                                     class="img-responsive reveal-inline-block"/>
-                            @endif
-                            <div class="caption">
-                                <h5 class="title">
-                                    <a href="{{url("menu/$menu->slug")}}"
-                                       class="link-white">{{$menu->title}}</a></h5>
+                    @if($menu->items_count)
+                        <div class="cell-sm-6 cell-md-4 {{$class}}">
+                            <div class="menu-variant-1">
+                                @if($menu->thumbnail)
+                                    <img src="{{$menu->thumbnail_url}}" alt="" style="width: 310px; height: 210px"
+                                         class="img-responsive reveal-inline-block"/>
+                                @else
+                                    <img src="https://ui-avatars.com/api/?background=EFA802&color=fff&name={{$menu->slug}}" alt="" style="width:250px; height: 210px"
+                                         class="img-responsive reveal-inline-block"/>
+                                @endif
+                                <div class="caption">
+                                    <h5 class="title">
+                                        <a href="{{url("menu/$menu->slug")}}"
+                                           class="link-white">{{$menu->title}}</a></h5>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                 @endforeach
 
             </div>

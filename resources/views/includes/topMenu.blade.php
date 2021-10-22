@@ -13,7 +13,7 @@
                                 <button data-rd-navbar-toggle=".rd-navbar-nav-wrap" class="rd-navbar-toggle">
                                     <span></span></button>
                                 <!-- RD Navbar Brand--><a href="{{url('/')}}" class="rd-navbar-brand brand">
-                                    <div class="brand-logo"><img src="{{asset('images/logo.png')}}"
+                                    <div class="brand-logo"><img src="{{secure_asset('images/logo.png')}}"
                                                                  alt="tashidelek-logo" width="232" height="49"/>
                                     </div>
                                 </a>
@@ -27,8 +27,9 @@
                                                     class="icon icon-circle icon-gray-dark icon-xxs mdi mdi-map-marker text-middle"></span>
                                             </div>
                                             <div class="unit-body">
-                                                <address class="contact-info"><a href="#"
-                                                                                 class="link-default link-xs">{!! $siteSetting->address!!}</a>
+                                                <address class="contact-info">
+                                                    <a href="#"
+                                                       class="link-default link-xs">{!! $siteSetting->address!!}</a>
                                                 </address>
                                             </div>
                                         </div>
@@ -78,15 +79,21 @@
                             <!-- RD Navbar Dropdown-->
                             <ul class="rd-navbar-dropdown menu-img-wrap">
                                 @foreach($menus->sortBy('row_order') as $menu)
-                                    <li class="menu-img"><a href='{{url("menu/$menu->slug")}}'>
-                                            @if($menu->thumbnail)
-                                                <img src="{{asset("storage/menuImages/$menu->thumbnail")}}" alt=""
-                                                     width="88" height="60"><span>{{$menu->title}}</span></a>
-                                        @else
-                                            <img src="https://via.placeholder.com/88/60" alt="" width="88" height="60">
-                                            <span>{{$menu->title}}</span></a>
-                                        @endif
-                                    </li>
+                                    @if($menu->items_count)
+                                        <li class="menu-img"><a href='{{url("menu/$menu->slug")}}'>
+                                                @if($menu->thumbnail)
+                                                    <img src="{{asset("storage/menuImages/$menu->thumbnail")}}"
+                                                         alt=""
+                                                         width="50">
+                                                    <span>{{$menu->title}}</span>
+                                            </a>
+                                            @else
+                                                <img src="https://via.placeholder.com/88/60" alt="" width="88"
+                                                     height="60">
+                                                <span>{{$menu->title}}</span></a>
+                                            @endif
+                                        </li>
+                                    @endif
                                 @endforeach
                             </ul>
                         </li>

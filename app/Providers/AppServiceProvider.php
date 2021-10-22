@@ -3,11 +3,11 @@
 namespace App\Providers;
 
 use App\Models\Menu;
-use App\Models\Setting;
 use App\Settings\SiteSetting;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\View\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,14 +28,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (Schema::hasTable('menus') && \Illuminate\Support\Facades\View::exists('includes.topMenu')) {
-            \Illuminate\Support\Facades\View::composer('*', function ($view) {
-                $view->with('menus', Menu::all());
+        if (Schema::hasTable('menus') && View::exists('includes.topMenu')) {
+            View::composer(['includes.topMenu', 'home'], function ($view) {
+                $menus = Menu::withCount('items')->with('items')->get();
+                $view->with('menus', $menus);
             });
         }
         if (Schema::hasTable('settings')) {
             $siteSetting = new SiteSetting();
-            \Illuminate\Support\Facades\View::share('siteSetting', $siteSetting);
+            View::share('siteSetting', $siteSetting);
         }
     }
 }

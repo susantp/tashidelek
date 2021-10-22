@@ -1,3 +1,14 @@
+.rd-navbar-static .rd-navbar-nav > li .rd-navbar-dropdown.menu-img-wrap{
+    min-width: 490px;
+}
+.rd-navbar-static .rd-navbar-nav > li .rd-navbar-dropdown.menu-img-wrap li{
+    -webkit-flex-basis: 25%;
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
+    min-width: 25%;
+}
+
 .menu-classic .menu-item span:first-of-type:before {
     position: absolute;
     left: 400px;
@@ -40,13 +51,11 @@
 
 .menu-item-offer {
     padding: 5px;
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: right;
 }
 
-.menu-item-offer > span {
-    stroke: white;
-    stroke-width: 10px;
+.menu-img >a > span{
+    font-size: 1rem;
 }
-
 

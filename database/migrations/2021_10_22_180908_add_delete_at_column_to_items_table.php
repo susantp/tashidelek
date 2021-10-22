@@ -4,21 +4,29 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddMenuIdOnItemsTable extends Migration
+class AddDeleteAtColumnToItemsTable extends Migration
 {
-
-    public function up(): void
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
     {
         Schema::table('items', function (Blueprint $table) {
-            $table->integer('menu_id')->after('id');
-            $table->integer('row_order')->nullable()->after('price');
+            $table->softDeletes();
         });
     }
 
-    public function down(): void
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
     {
         Schema::table('items', function (Blueprint $table) {
-            $table->dropColumn(['menu_id', 'row_order']);
+            //
         });
     }
 }

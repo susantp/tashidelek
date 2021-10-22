@@ -3,34 +3,28 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
-    public function index(): View
+    public function index()
     {
-        if (request()->has('fbclid')) {
-            $fbclid = request()->get('fbclid');
-            Log::info("facebook clid " . $fbclid);
-        }
+        $fbclid = request()->get('fbclid');
+        Log::info('fbclid ' . $fbclid);
+        /*$fbres = Http::get(
+                    "https://graph.facebook.com/v12.0/tashidelek.2013/feed", ['access_token' => config('social.facebook.token')]);
+                $data = $fbres->collect();
+                return $data;*/
         return view('home');
     }
 
     public function about()
     {
-        return \view('about');
+        return view('about');
     }
 
-    /**
-     * @param Request $request
-     * @param null $slug
-     * @return Factory|View|RedirectResponse|Redirector
-     */
     public function menu(Request $request, $slug = null)
     {
         if ($slug == null) return redirect('/');
