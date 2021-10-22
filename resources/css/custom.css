@@ -10,7 +10,7 @@
 
 .menu-classic-single .list-menu > li {
     padding: 22px 20px 22px 20px;
-    background-color: #F16121;
+    background-color: rgb(241,97,33,0.7);
     margin-bottom: 5px;
     contain: content;
 }
