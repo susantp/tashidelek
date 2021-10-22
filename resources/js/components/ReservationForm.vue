@@ -1,5 +1,6 @@
 <template>
-    <form class="form-contact-line text-left offset-top-35">
+    <h2 v-if="submitted.status">Your request is submitted. Our Customer care will contact you.</h2>
+    <form v-else class="form-contact-line text-left offset-top-35">
         <div class="form-inline-flex">
             <div class="form-group">
                 <label for="first-name" class="form-label form-label-outside rd-input-label">First name</label>
@@ -93,7 +94,7 @@
 </template>
 <script>
 import useReservations from "./useReservations";
-import {reactive, ref} from "vue";
+import {onMounted, reactive, ref} from "vue";
 
 export default {
     name: "reservationForm",
@@ -114,12 +115,12 @@ export default {
 
         })
 
-        const {storeReservation} = useReservations()
+        const {storeReservation, submitted} = useReservations()
         const saveReservation = async () => {
             await storeReservation({...form})
         }
         return {
-            form, saveReservation, errors
+            form, saveReservation, errors, submitted
         }
     }
 }

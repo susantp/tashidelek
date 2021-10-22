@@ -156,8 +156,10 @@
                                     <img src="{{$menu->thumbnail_url}}" alt="" style="width: 310px; height: 210px"
                                          class="img-responsive reveal-inline-block"/>
                                 @else
-                                    <img src="https://ui-avatars.com/api/?background=EFA802&color=fff&name={{$menu->slug}}" alt="" style="width:250px; height: 210px"
-                                         class="img-responsive reveal-inline-block"/>
+                                    <img
+                                        src="https://ui-avatars.com/api/?background=EFA802&color=fff&name={{$menu->slug}}"
+                                        alt="" style="width:250px; height: 210px"
+                                        class="img-responsive reveal-inline-block"/>
                                 @endif
                                 <div class="caption">
                                     <h5 class="title">
@@ -174,7 +176,7 @@
     </section>
     <section class="section-50 section-sm-100" style="background-color:#F16121">
         <div class="shell text-center">
-            <a href="{{$siteSetting->toastabUrl}}">
+            <a href="{{route('reservation')}}">
                 <div class="text-center">
                     <img src="{{asset('images/dinning.png')}}" alt="dinning-tashi-delek">
                     <h2>Make Online Reservation</h2>
