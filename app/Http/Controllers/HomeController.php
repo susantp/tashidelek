@@ -8,9 +8,6 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
-use Illuminate\Support\Facades\Log;
-use phpDocumentor\Reflection\Types\Mixed_;
-use function PHPUnit\Framework\isType;
 
 class HomeController extends Controller
 {

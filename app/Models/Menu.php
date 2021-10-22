@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class Menu extends Model
 {
@@ -19,16 +20,30 @@ class Menu extends Model
 
     public function getThumbnailUrlAttribute()
     {
-        return config('app.url') . Storage::url('menuImages/' . $this->attributes['thumbnail']);
+        return secure_asset('storage/menuImages/' . $this->attributes['thumbnail']);
     }
 
     public function getBgImageUrlAttribute()
     {
-        return config('app.url' . Storage::url('menuImages/bg/' . $this->attributes['bg_image']));
+        return secure_asset('storage/menuImages/bg/' . $this->attributes['bg_image']);
     }
 
     public function items()
     {
         return $this->hasMany(Item::class);
     }
+    /* public function getThumbnailAttribute($value){
+         return Str::slug($value);
+     }
+
+     public function getBgImageAttribute($value){
+         return Str::slug($value);
+     }
+     public function setThumbnailAttribute($value){
+         $this->attributes['thumbnail'] = Str::slug($value);
+     }
+     public function setBgImageAttribute($value){
+         $this->attributes['bg_image'] = Str::slug($value);
+
+     }*/
 }

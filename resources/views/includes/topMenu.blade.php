@@ -28,7 +28,7 @@
                                             </div>
                                             <div class="unit-body">
                                                 <address class="contact-info"><a href="#"
-                                                                                 class="link-default link-xs">{!! settings()->get('address')!!}</a>
+                                                                                 class="link-default link-xs">{!! $siteSetting->address!!}</a>
                                                 </address>
                                             </div>
                                         </div>
@@ -40,20 +40,20 @@
                                             </div>
                                             <div class="unit-body">
                                                 <address class="contact-info"><a href="callto:#"
-                                                                                 class="link-default link-xs">{{settings()->get('for_order')}}</a><span
-                                                        class="reveal-block text-base link-xs">{{settings()->get('opening_hours')}}</span>
+                                                                                 class="link-default link-xs">{{$siteSetting->forOrder}}</a><span
+                                                        class="reveal-block text-base link-xs">{{$siteSetting->openingHours}}</span>
                                                 </address>
                                             </div>
                                         </div>
                                     </li>
                                     <li>
                                         <ul class="list-inline list-inline-sm">
-                                            <li><a href="{{settings()->get('instagram_url')}}"
+                                            <li><a href="{{$siteSetting->instagramUrl}}"
                                                    class="link-silver-light"><span
                                                         class="icon icon-sm-mod-1 fa fa-instagram"></span></a></li>
-                                            <li><a href="{{settings()->get('facebook_url')}}" class="link-silver-light"><span
+                                            <li><a href="{{$siteSetting->facebookUrl}}" class="link-silver-light"><span
                                                         class="icon icon-sm-mod-1 fa fa-facebook"></span></a></li>
-                                            <li><a href="{{settings()->get('yelp_url')}}"
+                                            <li><a href="{{$siteSetting->yelpUrl}}"
                                                    class="link-silver-light"><span
                                                         class="icon icon-sm-mod-1 fa fa-yelp"></span></a></li>
 
@@ -105,7 +105,7 @@
                                     </div>
                                     <div class="unit-body">
                                         <address class="contact-info"><a href="#"
-                                                                         class="link-default link-xs">{{settings()->get('address')}}</a>
+                                                                         class="link-default link-xs">{{$siteSetting->address}}</a>
                                         </address>
                                     </div>
                                 </div>
@@ -117,8 +117,8 @@
                                     </div>
                                     <div class="unit-body">
                                         <address class="contact-info"><a href="callto:#"
-                                                                         class="link-default link-xs">{{settings()->get('for_order')}}</a><span
-                                                class="reveal-block text-base link-xs">{{settings()->get('opening_hours')}}</span>
+                                                                         class="link-default link-xs">{{$siteSetting->forOrder}}</a><span
+                                                class="reveal-block text-base link-xs">{{$siteSetting->openingHours}}</span>
                                         </address>
                                     </div>
                                 </div>

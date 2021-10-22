@@ -12,3 +12,7 @@ Route::get('contact', [HomeController::class, 'contact']);
 /*Route::get('excel', function () {
     return \Maatwebsite\Excel\Facades\Excel::import(new \App\Imports\ItemImport, public_path('menus/beverages-beer.csv'));
 });*/
+
+Auth::routes();
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

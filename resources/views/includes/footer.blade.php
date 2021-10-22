@@ -24,13 +24,13 @@
                 <div class="cell-sm-6 cell-md-4 cell-lg-3 offset-top-30 offset-top-50 offset-lg-top-0">
                     <h5 class="text-italic font-secondary">Follow Us</h5>
                     <ul class="list-inline offset-top-15">
-                        <li><a href="{{settings()->get('instagram_url')}}"><span
+                        <li><a href="{{$siteSetting->instagramUrl}}"><span
                                     class="icon icon-sm icon-circle icon-gray icon-social fa-instagram"></span></a>
                         </li>
-                        <li><a href="{{settings()->get('facebook_url')}}"><span
+                        <li><a href="{{$siteSetting->facebookUrl}}"><span
                                     class="icon icon-sm icon-circle icon-gray icon-social fa-facebook"></span></a>
                         </li>
-                        <li><a href="{{settings()->get('yelp_url')}}"><span
+                        <li><a href="{{$siteSetting->yelpUrl}}"><span
                                     class="icon icon-sm icon-circle icon-gray icon-social fa-yelp"></span></a>
                         </li>
                     </ul>
@@ -41,8 +41,8 @@
                         <div class="unit-left"><span
                                 class="icon icon-md-mod-1 icon-default mdi mdi-phone text-middle"></span></div>
                         <div class="unit-body">
-                            <address class="contact-info"><a href="callto:#" class="link-white link-lg">{{settings()->get('for_order')}}</a></address>
-                            <span class="contact-info">We work {{settings()->get('opening_hours')}}</span>
+                            <address class="contact-info"><a href="callto:#" class="link-white link-lg">{{$siteSetting->forOrder}}</a></address>
+                            <span class="contact-info">We work {{$siteSetting->openingHours}}</span>
                         </div>
                     </div>
                 </div>

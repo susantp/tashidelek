@@ -26,7 +26,7 @@
                         <ul class="list-menu">
                             @foreach($menu->items as $item)
                             <li>
-                                <div class="menu-item h6"><span>{{ucfirst($item->name)}}</span><span class="price">{{$item->price}}</span></div>
+                                <div class="menu-item h6"><span class="name">{{ucfirst($item->name)}}</span> <span class="price">{{$item->price}}</span></div>
                                 <div class="menu-item-desc"><span>{{strtolower($item->description)}}</span></div>
                             </li>
                             @endforeach

@@ -5,7 +5,7 @@
         <div class="swiper-variant-1">
             <div data-slide-effect="fade" data-min-height="600px" class="swiper-container swiper-slider">
                 <div class="swiper-wrapper">
-                    <div data-slide-bg="images/home-slide-3-1920x800.jpg" class="swiper-slide">
+                    <div data-slide-bg="/images/home-slide-3-1920x800.jpg" class="swiper-slide">
                         <div class="swiper-slide-caption slide-caption-2 text-center">
                             <div class="shell">
                                 <div class="range range-sm-center">
@@ -18,7 +18,7 @@
                                            class="text-white offset-top-18">Welcome to Tashi Delek, a place where
                                             you can order your favorite restaurant dishes, drinks, and desserts at
                                             affordable price. We are glad to offer you the best food in the area to
-                                            everyone.</p><a href="{{settings()->get('toastab_url')}}"
+                                            everyone.</p><a href="{{$siteSetting->toastabUrl}}"
                                                             data-caption-animate="fadeInUpSmall"
                                                             data-caption-delay="1000"
                                                             class="btn btn-secondary btn-md btn-shape-circle offset-top-20">order
@@ -28,7 +28,7 @@
                             </div>
                         </div>
                     </div>
-                    <div data-slide-bg="images/home-slide-4-1920x800.jpg" class="swiper-slide">
+                    <div data-slide-bg="/images/home-slide-4-1920x800.jpg" class="swiper-slide">
                         <div class="swiper-slide-caption slide-caption-2 text-center">
                             <div class="shell">
                                 <div class="range range-sm-center">
@@ -42,7 +42,7 @@
                                            class="text-white offset-top-18">Looking for fresh and tasty breakfasts
                                             and lunches? At Tashi Delek, you can order any kind of morning snack
                                             from local restaurants at reasonable prices without any extra
-                                            charges.</p><a href="{{settings()->get('toastab_url')}}"
+                                            charges.</p><a href="{{$siteSetting->toastabUrl}}"
                                                            data-caption-animate="fadeInUpSmall"
                                                            data-caption-delay="1000"
                                                            class="btn btn-secondary btn-md btn-shape-circle offset-top-20">order
@@ -77,7 +77,7 @@
              class="slick-slider carousel-center-mode offset-top-30">
             <div class="item">
                 <div class="slick-slide-inner"><a href="#" class="deals-block deals-block-variant-1"><img
-                            src="images/index-1-1008x585.jpg" alt="" width="1008" height="585"
+                            src="/images/index-1-1008x585.jpg" alt="" width="1008" height="585"
                             class="img-responsive"/>
                         <div class="caption">
                             <div class="title-wrap text-xs-left">
@@ -97,7 +97,7 @@
             </div>
             <div class="item">
                 <div class="slick-slide-inner"><a href="#" class="deals-block deals-block-variant-1"><img
-                            src="images/index-2-1008x585.jpg" alt="" width="1008" height="585"
+                            src="/images/index-2-1008x585.jpg" alt="" width="1008" height="585"
                             class="img-responsive"/>
                         <div class="caption">
                             <div class="title-wrap">
@@ -112,7 +112,7 @@
             </div>
             <div class="item">
                 <div class="slick-slide-inner"><a href="#" class="deals-block deals-block-variant-1"><img
-                            src="images/index-3-1008x585.jpg" alt="" width="1008" height="585"
+                            src="/images/index-3-1008x585.jpg" alt="" width="1008" height="585"
                             class="img-responsive"/>
                         <div class="caption">
                             <div class="title-wrap">
@@ -127,7 +127,7 @@
             </div>
             <div class="item">
                 <div class="slick-slide-inner"><a href="#" class="deals-block deals-block-variant-1"><img
-                            src="images/index-3-1008x585.jpg" alt="" width="1008" height="585"
+                            src="/images/index-3-1008x585.jpg" alt="" width="1008" height="585"
                             class="img-responsive"/>
                         <div class="caption">
                             <div class="title-wrap">
@@ -152,12 +152,12 @@
                     <div class="cell-sm-6 cell-md-4 {{$class}}">
                         <div class="menu-variant-1">
                             @if($menu->thumbnail)
-                            <img src="{{$menu->thumbnail_url}}" alt="" style="width: 310px; height: 210px"
-                                 class="img-responsive reveal-inline-block"/>
+                                <img src="{{$menu->thumbnail_url}}" alt="" style="width: 310px; height: 210px"
+                                     class="img-responsive reveal-inline-block"/>
                             @else
                                 <img src="https://ui-avatars.com/api/?background=EFA802&color=fff&name={{$menu->slug}}" alt="" style="width:250px; height: 210px"
                                      class="img-responsive reveal-inline-block"/>
-                                @endif
+                            @endif
                             <div class="caption">
                                 <h5 class="title">
                                     <a href="{{url("menu/$menu->slug")}}"
@@ -172,13 +172,13 @@
     </section>
     <section class="section-50 section-sm-100" style="background-color:#F16121">
         <div class="shell text-center">
-            <a href="{{settings()->get('toastab_url')}}">
+            <a href="{{$siteSetting->toastabUrl}}">
                 <div class="text-center">
                     <img src="{{asset('images/dinning.png')}}" alt="dinning-tashi-delek">
                     <h2>Make Online Reservation</h2>
                     <h3>Click here</h3>
                     <h4>or</h4>
-                    <h5>{{settings()->get('for_order')}}</h5>
+                    <h5>{{$siteSetting->forOrder}}</h5>
                 </div>
             </a>
         </div>

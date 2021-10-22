@@ -15,8 +15,9 @@
           href="https://fonts.googleapis.com/css?family=Changa+One:400,400i%7CGrand+Hotel%7CLato:300,400,400italic,700">
     <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Changa+One:400,400i%7CGrand+Hotel%7CLato:300,400,400italic,700">
-    <link rel="preload" as="style" href="{{asset('css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="preload" as="style" href="{{mix('css/app.css', 'dist')}}">
+    <link rel="stylesheet" href="{{asset('static/css/style.css')}}">
+    <link rel="stylesheet" href="{{mix('css/app.css', 'dist')}}">
 
     <style>
         .rd-navbar-static .rd-navbar-nav > li .rd-navbar-dropdown.menu-img-wrap{
@@ -30,7 +31,7 @@
             src="{{asset('images/ie8-panel/warning_bar_0000_us.jpg')}}" border="0" height="42" width="820"
             alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a>
     </div>
-    <script src="{{asset('js/html5shiv.min.js')}}"></script>
+{{--    <script src="{{asset('js/html5shiv.min.js')}}"></script>--}}
     <![endif]-->
 </head>
 <body>
@@ -92,8 +93,9 @@
     </div>
 </div>
 <!-- Java script-->
-<script src="{{asset('js/core.min.js')}}"></script>
-<script src="{{asset('js/script.js')}}"></script>
+<script src="{{asset('static/js/core.min.js')}}"></script>
+<script src="{{asset('static/js/script.js')}}"></script>
+<script src="{{mix('js/app.js', 'dist')}}"></script>
 </body>
 
 <!-- Mirrored from static.livedemo00.template-help.com/wt_62172/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Apr 2021 22:10:22 GMT -->
