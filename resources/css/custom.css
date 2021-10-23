@@ -1,7 +1,8 @@
-.rd-navbar-static .rd-navbar-nav > li .rd-navbar-dropdown.menu-img-wrap{
+.rd-navbar-static .rd-navbar-nav > li .rd-navbar-dropdown.menu-img-wrap {
     min-width: 490px;
 }
-.rd-navbar-static .rd-navbar-nav > li .rd-navbar-dropdown.menu-img-wrap li{
+
+.rd-navbar-static .rd-navbar-nav > li .rd-navbar-dropdown.menu-img-wrap li {
     -webkit-flex-basis: 25%;
     -ms-flex-preferred-size: 25%;
     flex-basis: 25%;
@@ -19,7 +20,7 @@
     border-top: 1px dashed;
 }
 
-.menu-item{
+.menu-item {
     overflow: fragments;
 }
 
@@ -39,6 +40,7 @@
 
 .menu-item .name {
     font-size: 3rem;
+    max-width: 70%;
     overflow: fragments;
     font-family: "Poppins", serif;
 
@@ -55,10 +57,10 @@
     text-align: right;
 }
 
-.menu-img >a > span{
+.menu-img > a > span {
     font-size: 1rem;
 }
 
-.form-control{
-background-color: #1c2931;
+.form-control {
+    background-color: #1c2931;
 }
