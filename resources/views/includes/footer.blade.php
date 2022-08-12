@@ -14,7 +14,9 @@
                                   class="rd-mailform form-subscribe form-inline-flex-xs">
                                 <div class="form-group">
                                     <input placeholder="Your Email" type="email" name="email"
-                                           data-constraints="@Required @Email" class="form-control">
+                                           class="form-control">
+{{--                                    <input placeholder="Your Email" type="email" name="email"--}}
+{{--                                           data-constraints="@Required @Email" class="form-control">--}}
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-shape-circle">Subscribe</button>
                             </form>

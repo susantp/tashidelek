@@ -15,10 +15,15 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('menu_id')->nullable();
             $table->string('name');
+            $table->string('slug')->unique();
             $table->string('description')->nullable();
+            $table->string('price_offer')->nullable()->default(null);
             $table->integer('price');
+            $table->integer('row_order')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -152,7 +152,7 @@
                     @if($menu->items_count)
                         <div class="cell-sm-6 cell-md-4 {{$class}}">
                             <div class="menu-variant-1">
-                                @if($menu->thumbnail)
+                                @if($menu->thumbnail && !str()->contains($menu->thumbnail, 'http'))
                                     <img src="{{$menu->thumbnail_url}}" alt="" style="width: 310px; height: 210px"
                                          class="img-responsive reveal-inline-block"/>
                                 @else

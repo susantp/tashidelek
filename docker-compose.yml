@@ -1,0 +1,84 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:stable-alpine
+    restart: unless-stopped
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: "${PROJECT_NAME}_nginx"
+    ports:
+      - '80:80' #thamelmart
+      - '443:443' #thamelmar
+    volumes:
+      - ./:/var/www/
+      - ${NGINX_SITES_PATH}:/etc/nginx/sites-available
+      - ./nginx/log:/var/log/nginx
+      - ./nginx/ssl:/etc/nginx/ssl
+    networks:
+      tashidelek:
+        aliases:
+          - tashidelek.test
+    depends_on:
+      - php
+  php:
+    container_name: "${PROJECT_NAME}_php"
+    build: ./php
+    # restart: unless-stopped
+    environment:
+      PHP_MEMORY_LIMIT: "${PHP_MEMORY_LIMIT}"
+      COMPOSER_MEMORY_LIMIT: '-1'
+      # USER: "${USER}"
+      # UID: "${UID}"
+    volumes:
+      - ./:/var/www
+    ports:
+      - '9000:9000'
+    networks:
+      - tashidelek
+    depends_on:
+      - mysql
+      - pma
+      - redis
+  mysql:
+    container_name: "${PROJECT_NAME}_mysql"
+    build: ./mysql
+    volumes:
+      - "~/.tashidelek/data/mysql:/var/lib/mysql"
+      - ${MYSQL_ENTRYPOINT_INITDB}:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      TZ: ${TIMEZONE}
+    networks:
+      - tashidelek
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    container_name: "${PROJECT_NAME}_pma"
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - "8090:80"
+    networks:
+      - tashidelek
+
+  redis:
+    build: ./redis
+    container_name: "${PROJECT_NAME}_redis"
+    volumes:
+      - "~/.tashidelek/data/redis:/data"
+    ports:
+      - "${REDIS_PORT}:6379"
+    networks:
+      - tashidelek
+networks:
+  tashidelek:
+    driver: bridge

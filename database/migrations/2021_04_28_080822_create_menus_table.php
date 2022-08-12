@@ -17,9 +17,11 @@ class CreateMenusTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->string('thumbnail');
-            $table->string('bg_image');
+            $table->string('description')->nullable();
+            $table->string('thumbnail')->nullable();
+            $table->string('bg_image')->nullable();
             $table->boolean('status')->nullable();
+            $table->integer('row_order')->nullable();
             $table->timestamps();
         });
     }

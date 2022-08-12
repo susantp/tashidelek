@@ -22,16 +22,21 @@ class Items implements ToModel, WithUpserts, WithHeadingRow
 
     public function model(array $row)
     {
-        $menu = $this->menus->where('slug', Str::slug($row['menu']))->first();
-        return new Item([
-            'menu_id' => $menu->id ?? '',
-            'name' => Str::lower(trim($row['name'])),
-            'slug' => Str::slug($row['name']),
-            'description' => $row['description'] ?? null,
-            'price_offer' => $row['offer'] ?? null,
-            'price' => floatval($row['price']),
-            'row_order' => $row['order']
-        ]);
+        try {
+            $menu = $this->menus->where('slug', Str::slug($row['menu']))->first();
+            return new Item([
+                'menu_id' => $menu->id,
+                'name' => Str::lower(trim($row['name'])),
+                'slug' => Str::slug($row['name']),
+                'description' => $row['description'] ?? null,
+                'price_offer' => $row['offer'] ?? null,
+                'price' => floatval($row['price']),
+                'row_order' => $row['order']
+            ]);
+        } catch (\Exception $exception) {
+            dd($row);
+        }
+
     }
 
     public function uniqueBy(): string

@@ -5,8 +5,10 @@ namespace App\Imports\Sheets;
 use App\Models\Menu;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithUpserts;
 
-class Menus implements \Maatwebsite\Excel\Concerns\ToModel, \Maatwebsite\Excel\Concerns\WithUpserts, \Maatwebsite\Excel\Concerns\WithHeadingRow
+class Menus implements ToModel, WithUpserts, \Maatwebsite\Excel\Concerns\WithHeadingRow
 {
 
     /**
@@ -18,10 +20,10 @@ class Menus implements \Maatwebsite\Excel\Concerns\ToModel, \Maatwebsite\Excel\C
             'title' => $row['title'],
             'description' => $row['description'],
             'slug' => Str::slug($row['title']),
-            'thumbnail' => $row['thumbnail'] ?? null,
-            'bg_image' => $row['bg_image'] ?? null,
+            'thumbnail' => $row['thumbnail'] ?? "",
+            'bg_image' => $row['bg_image'] ?? "",
             'status' => $row['status'] ?? 1,
-            'row_order' => $row['order']
+            'row_order' => $row['order'] ?? 1
         ]);
     }
 

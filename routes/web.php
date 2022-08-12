@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Imports\DataImport;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Excel;
@@ -15,7 +17,8 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/import', function (Excel $excel) {
     $filePath = public_path('data.xlsx');
 //    return $filePath;
-    $excel->import(new \App\Imports\DataImport('Items'), $filePath);
+    $excel->import(new DataImport('menus'), $filePath);
+    $excel->import(new DataImport('items'), $filePath);
     return 'yes';
 });
 Route::get('mail', function () {
