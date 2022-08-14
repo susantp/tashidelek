@@ -14,3 +14,4 @@ yarn-error.log
 *.sql
 /wp-backup
 /fiverr
+.env.production
