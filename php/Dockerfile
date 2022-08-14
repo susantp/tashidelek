@@ -40,9 +40,9 @@ RUN docker-php-ext-configure gd \
     && docker-php-ext-install gd
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 # Add a non-root user to prevent files being created with root permissions on host machine.
-ARG PUID=1000
+ARG PUID=1002
 ENV PUID ${PUID}
-ARG PGID=1000
+ARG PGID=1003
 ENV PGID ${PGID}
 
 RUN groupadd -g ${PGID} apache && \
