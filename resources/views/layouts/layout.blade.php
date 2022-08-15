@@ -9,6 +9,18 @@
           content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
+    <meta
+        name="description"
+        content="Tashi Delek Cuisine in el cerrito, CA. The best Tibetan, Indian and Nepali cuisine in El Cerrito, California area. "
+    />
+    <meta
+        property="og:description"
+        content="Tashi Delek Cuisine in el cerrito, CA. The best Tibetan, Indian and Nepali cuisine in El Cerrito, California area. "
+    />
+    <meta
+        property="og:image"
+        content="https://popmenucloud.com/cdn-cgi/image/width=300,height=300,format=auto,fit=pad,background=transparent/qevljzux/365ba427-253c-413d-b78b-396a5a076313.png"
+    />
     <link rel="icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="preload" as="font"
