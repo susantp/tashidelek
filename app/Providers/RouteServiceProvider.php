@@ -52,13 +52,19 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->namespace($this->namespace)
                 ->middleware('api')
+                ->group(base_path('routes/restaurants/v1/reservations.php'));
+
+            Route::middleware('api')
+                ->namespace($this->namespace)
+                ->name('restaurants.v1.')
                 ->prefix('api/restaurants/v1')
                 ->group(base_path('routes/restaurants/v1/items.php'));
-            Route::middleware('web')
-                ->namespace($this->namespace)
+
+            Route::namespace($this->namespace)
                 ->middleware('api')
                 ->prefix('api/restaurants/v1')
-                ->group(base_path('routes/restaurants/v1/reservations.php'));
+                ->name('restaurants.v1.')
+                ->group(base_path('routes/restaurants/v1/index.php'));
         });
     }
 
