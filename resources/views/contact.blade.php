@@ -19,7 +19,6 @@
                                 <label for="contact-name" class="form-label form-label-outside rd-input-label">First
                                     name</label>
                                 <input id="contact-name" type="text" placeholder="Enter your name" name="name"
-                                       data-constraints="@Required"
                                        class="form-control form-control-has-validation form-control-last-child"><span
                                     class="form-validation">The text field is required.</span>
                             </div>
@@ -27,7 +26,6 @@
                                 <label for="contact-phone"
                                        class="form-label form-label-outside rd-input-label">Phone</label>
                                 <input id="contact-phone" type="text" placeholder="Enter phone" name="phone"
-                                       data-constraints="@Numeric @Required"
                                        class="form-control form-control-has-validation form-control-last-child"><span
                                     class="form-validation"></span>
                             </div>
@@ -36,7 +34,7 @@
                             <label for="message" class="form-label form-label-outside rd-input-label">your
                                 message</label>
                             <textarea id="message" placeholder="Write your message here" name="message"
-                                      data-constraints="@Required"
+
                                       class="form-control form-control-has-validation form-control-last-child"></textarea><span
                                 class="form-validation"></span>
                         </div>
@@ -45,7 +43,7 @@
                                 <div class="form-group">
                                     <label for="contact-email-2" class="form-label form-label-outside rd-input-label">E-mail</label>
                                     <input id="contact-email-2" type="email" placeholder="Enter your email" name="email"
-                                           data-constraints="@Email @Required"
+
                                            class="form-control form-control-has-validation form-control-last-child"><span
                                         class="form-validation"></span>
                                 </div>
