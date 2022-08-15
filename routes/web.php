@@ -14,13 +14,13 @@ Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
 Route::get('/reservation', [HomeController::class, 'reservation'])->name('reservation');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
-Route::get('/import', function (Excel $excel) {
-    $filePath = public_path('data.xlsx');
+//Route::get('/import', function (Excel $excel) {
+   // $filePath = public_path('data.xlsx');
 //    return $filePath;
-    $excel->import(new DataImport('menus'), $filePath);
-    $excel->import(new DataImport('items'), $filePath);
-    return 'yes';
-});
+   // $excel->import(new DataImport('menus'), $filePath);
+   // $excel->import(new DataImport('items'), $filePath);
+  //  return 'yes';
+//});
 Route::get('mail', function () {
     Mail::raw('Text to e-mail', function ($message) {
         $message->to('gracysusant@gmail.com');
