@@ -61,7 +61,7 @@
                     <p class="copyright">
                         {{config('app.name')}}
                         &nbsp;&#169;&nbsp;<span id="copyright-year"></span>&nbsp;<br class="veil-sm">Powered By
-                        <a href="http://susantpaudel.com.np">Techbizz</a>
+                        <a href="https://techbizzsoft.com">Techbizz</a>
                         <!-- {%FOOTER_LINK}-->
                     </p>
                 </div>
