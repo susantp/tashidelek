@@ -21,6 +21,7 @@ class CreateItemsTable extends Migration
             $table->string('description')->nullable();
             $table->string('price_offer')->nullable()->default(null);
             $table->integer('price');
+            $table->string('imagePath')->nullable();
             $table->integer('row_order')->nullable();
             $table->timestamps();
             $table->softDeletes();
