@@ -4,3 +4,4 @@
 2022/08/12 10:02:25 [warn] 1#1: "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/ssl/default.crt"
 2022/08/12 10:03:12 [warn] 1#1: "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/ssl/default.crt"
 2022/08/12 10:04:14 [warn] 1#1: "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/ssl/default.crt"
+2022/08/15 10:52:21 [warn] 1#1: "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/ssl/default.crt"
