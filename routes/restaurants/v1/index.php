@@ -5,9 +5,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home', function () {
     $title = config('app.name');
     $info = [
-        'logoFile' => 'logo.png',
-        'title' => $title,
-        'description' => 'Our Chefs offer you perfect cooking, best-served dishes with fresh ingredients and old recipes. We have only carefully'.'</br>'.'sourced and seasonal ingredients at our disposal to make rustic dishes. We provide you with daily Mo: Mo, Tandoori,'.'</br>'.'Vegetable Korma and many more.',
+        'header' => [
+            'logoFile' => 'logo.png',
+            'title' => $title,
+            'description' => 'Our Chefs offer you perfect cooking, best-served dishes with fresh ingredients and old recipes. We have only carefully'.'</br>'.'sourced and seasonal ingredients at our disposal to make rustic dishes. We provide you with daily Mo: Mo, Tandoori,'.'</br>'.'Vegetable Korma and many more.',
+        ],
         'sliders' => [
             [
                 'position' => 0,
@@ -28,17 +30,20 @@ Route::get('/home', function () {
             [
                 'title' => 'Our Menu',
                 'slug' => 'menu',
-                'image' => 'https://via.placeholder.com/200.png'
+                'image' => 'https://via.placeholder.com/200.png',
+                "thumbnail" => "/pages/menu.jpg"
             ],
             [
                 'title' => 'Catering',
                 'slug' => 'catering',
-                'image' => 'https://via.placeholder.com/200.png'
+                'image' => 'https://via.placeholder.com/200.png',
+                "thumbnail" => "/pages/catering.jpg"
             ],
             [
                 'title' => 'Events',
                 'slug' => 'events',
-                'image' => 'https://via.placeholder.com/200.png'
+                'image' => 'https://via.placeholder.com/200.png',
+                "thumbnail" => "/pages/events.jpg"
             ]
         ]
     ];
