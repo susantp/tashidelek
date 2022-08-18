@@ -44,7 +44,7 @@
                                 class="icon icon-md-mod-1 icon-default mdi mdi-phone text-middle"></span></div>
                         <div class="unit-body">
                             <address class="contact-info"><a href="callto:#" class="link-white link-lg">{{$siteSetting->forOrder}}</a></address>
-                            <span class="contact-info">We work {{$siteSetting->openingHours}}</span>
+                            <span class="contact-info">We work  {!!  $siteSetting->openingHours!!}</span>
                         </div>
                     </div>
                 </div>
